@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
+import { CourseService } from './services/course.service';
 
 import { AppComponent } from './app.component';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
@@ -7,6 +10,17 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 import { SectionComponent } from './components/section/section.component';
+
+
+const routes: Routes = [ 
+  {path: 'course/:id', component: CourseDetailComponent},
+  {path: 'course', component: CourseListComponent}, 
+  {path: 'department/:id', component: CourseListComponent},
+  {path: 'department', component: CourseListComponent}, 
+  {path: 'serach/:keyword', component: CourseListComponent},
+  {path: '', redirectTo: '/products', pathMatch: 'full'}, 
+  {path: '**', redirectTo: '/products', pathMatch: 'full'} 
+]; 
 
 @NgModule({
   declarations: [
@@ -18,9 +32,11 @@ import { SectionComponent } from './components/section/section.component';
     SectionComponent
   ],
   imports: [
-    BrowserModule
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

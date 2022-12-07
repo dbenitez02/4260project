@@ -1,1 +1,15 @@
-<p>course-list works!</p>
+<table class="table"> 
+    <thead class="thead-dark"> 
+        <tr> 
+            <th>ID</th> 
+            <th>TITLE</th> 
+        </tr> 
+    </thead> 
+
+    <tbody>
+        <tr *ngFor = "let c of courses"> 
+            <td class="align-middle">{{ c.id }}</td>
+            <td class="align-middle">{{ c.title}}</td>
+        </tr>
+    </tbody>
+</table>

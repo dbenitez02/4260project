@@ -1,3 +1,7 @@
+/**
+ * Column names from Course table.
+ */
+
 export class Course {
     id: number;
     number: string;
