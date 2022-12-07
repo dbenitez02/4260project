@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.search-box {
+    display: flex;
+    justify-content: space-between;
+}
+.right {
+
+    height: 90px;
+    width: 90px;
+    border: 10px dashed lightblue;
+    border-radius: 5px;
+    background-color: lightyellow;
+    float: right;
+    position: fixed;
+    margin-top: 5px;
+    }

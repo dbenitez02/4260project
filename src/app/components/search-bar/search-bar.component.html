@@ -1,1 +1,8 @@
-<p>search-bar works!</p>
+<div class="container search-box" >
+    <input #myInput type="text"
+            class="form-control"
+            placeholder="Search"
+            (keyup.enter)="doSearch(myInput.value)" />
+            
+    <button (click)="doSearch(myInput.value)" class="btn btn-primary">Search</button>
+</div>

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 import { CourseService } from './services/course.service';
 
+
 import { AppComponent } from './app.component';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
@@ -13,13 +14,13 @@ import { SectionComponent } from './components/section/section.component';
 
 
 const routes: Routes = [ 
-  {path: 'course/:id', component: CourseDetailComponent},
-  {path: 'course', component: CourseListComponent}, 
+  {path: 'courses/:id', component: CourseDetailComponent},
+  {path: 'courses', component: CourseListComponent}, 
   {path: 'department/:id', component: CourseListComponent},
   {path: 'department', component: CourseListComponent}, 
   {path: 'serach/:keyword', component: CourseListComponent},
-  {path: '', redirectTo: '/products', pathMatch: 'full'}, 
-  {path: '**', redirectTo: '/products', pathMatch: 'full'} 
+  {path: '', redirectTo: '/courses', pathMatch: 'full'}, 
+  {path: '**', redirectTo: '/courses', pathMatch: 'full'} 
 ]; 
 
 @NgModule({

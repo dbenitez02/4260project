@@ -1,15 +1,20 @@
-<table class="table"> 
+<div class="container">   
+    <table class="table"> 
     <thead class="thead-dark"> 
         <tr> 
-            <th>ID</th> 
+            <th>NUMBER</th> 
             <th>TITLE</th> 
         </tr> 
     </thead> 
 
     <tbody>
         <tr *ngFor = "let c of courses"> 
-            <td class="align-middle">{{ c.id }}</td>
-            <td class="align-middle">{{ c.title}}</td>
+            <td class="align-middle"><a routerLink="/courses/{{ c.id }}">{{ c.number }}</a></td>
+            <td class="align-middle">{{ c.title }}</td>
         </tr>
     </tbody>
-</table>
+    </table>
+</div>
+<div class="container">
+    <app-course-detail></app-course-detail>
+</div>
