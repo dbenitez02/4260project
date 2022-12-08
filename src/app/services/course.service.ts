@@ -36,17 +36,6 @@ export class CourseService {
       map(repsonse => repsonse._embedded.department));
   }
 
-  getCourseListPaginate(
-    thePage: number,
-    thePageSize: number,
-    theDepartmentId: number): Observable<GetResponseCourses> {
-      // http://localhost:8080/api/courses/search/findbyId?id=1&page=0&size=20
-      const url = `${this.baseUrl}/search/findByDepartmentId` 
-      + `?id=${theDepartmentId}&page=${thePage}&size=${thePageSize}`;
-    
-        return this.httpClient.get<GetResponseCourses>(url);
-    } //  End getCourseListPaginate()
-
   /**
    * 
    * @param keyword 
@@ -63,10 +52,11 @@ export class CourseService {
 
   /* Unwrap the product data in JSON from a REST API endpoint into a Product array 
   _embedded is an attribute at top of the JSON data from Spring Data REST 
-  products is the name of an array containing products. */ 
-  /**
+  products is the name of an array containing products. */
   interface GetResponseCourses { 
-    _embedded: { courses: Course[];  },
+    _embedded: { 
+      courses: Course[];  
+    },
     page: {
       size: number,
       totalElements: number,
@@ -74,12 +64,8 @@ export class CourseService {
       number: number,
     } 
   } //  End of GetResponseCourses
-  */
 
   interface GetResponseDepartment { 
     _embedded: { department: Department[]; }
   } // End of getResponseDepartment
 
-  interface GetResponseCourses {
-    _embedded: { courses: Course[]; }
-  }

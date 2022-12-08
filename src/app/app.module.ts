@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 import { CourseService } from './services/course.service';
 
-
 import { AppComponent } from './app.component';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
@@ -35,7 +34,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]

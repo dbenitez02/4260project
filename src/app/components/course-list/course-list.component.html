@@ -1,20 +1,28 @@
-<div class="container">   
-    <table class="table"> 
-    <thead class="thead-dark"> 
-        <tr> 
-            <th>NUMBER</th> 
-            <th>TITLE</th> 
-        </tr> 
-    </thead> 
+<div class="container"> 
+    <app-search-bar></app-search-bar>
+    <div class="row">
+        <h3></h3>  
+        <div class="col-lg">
+            <table class="table"> 
+            <thead class="table-dark"> 
+                <tr>
+                    
+                    <th>NUMBER</th> 
+                    <th>TITLE</th> 
+                </tr> 
+            </thead> 
 
-    <tbody>
-        <tr *ngFor = "let c of courses"> 
-            <td class="align-middle"><a routerLink="/courses/{{ c.id }}">{{ c.number }}</a></td>
-            <td class="align-middle">{{ c.title }}</td>
-        </tr>
-    </tbody>
-    </table>
-</div>
-<div class="container">
-    <app-course-detail></app-course-detail>
+            <tbody>
+                <tr *ngFor = "let c of courses"> 
+                    <td class="align-middle"><a routerLink="/courses/{{ c.id }}">{{ c.number }}</a></td>
+                    <td class="align-middle">{{ c.title }}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <div class="col-md">
+            <app-course-detail></app-course-detail>
+        </div>
+    </div>
 </div>

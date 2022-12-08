@@ -1,8 +1,13 @@
-<div class="container search-box" >
-    <input #myInput type="text"
-            class="form-control"
-            placeholder="Search"
-            (keyup.enter)="doSearch(myInput.value)" />
-            
-    <button (click)="doSearch(myInput.value)" class="btn btn-primary">Search</button>
-</div>
+<div class="container" style="display: flex; justify-content: space-between;">
+    <div class="row">
+        <div class="col-lg-8 mb-3">
+            <input #myInput type="text"
+                    class="form-control"
+                    placeholder="Search"
+                    (keyup.enter)="doSearch(myInput.value)" />
+            </div>
+            <div class="col-sm">
+                <button (click)="doSearch(myInput.value)" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+</div>  
